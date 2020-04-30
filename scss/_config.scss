@@ -6,18 +6,17 @@ $background-opacity: 0.7;
 
 @mixin easeOut {
   transition: ease-out 0.5s all;
-  
 }
 
 @mixin background {
   @if $show-home-image {
-    &#bg-img{
+    &#bg-img {
       background: $home-image;
       background-attachment: fixed;
       background-size: cover;
 
-      &:after{
-        content: '';
+      &:after {
+        content: "";
         position: absolute;
         top: 0;
         right: 0;
@@ -27,5 +26,30 @@ $background-opacity: 0.7;
         background: rgba($primary-color, $background-opacity);
       }
     }
+  }
+}
+
+// Media query mixins
+@mixin mediaSm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin mediaXL {
+  @media screen and (max-width: 1171px) {
+    @content;
   }
 }

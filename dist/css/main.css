@@ -46,7 +46,7 @@
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
-    background: #24272b;
+    background: #222428;
     transform: translate3d(0, 100%, 0);
     transition: ease-out 0.5s all; }
     .menu-branding.show {
@@ -57,6 +57,7 @@
       background: url("../img/portrait_1.jpg");
       border-radius: 50%;
       border: solid 3px #419a1c;
+      background-repeat: none;
       background-position: center; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
@@ -90,6 +91,39 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+    main .sm-heading.slide-down {
+      margin-top: auto; }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100, 0, 0);
+    font-size: 24px; }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      background: url("../img/portrait_2.jpg");
+      width: 150px;
+      height: 150px; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; } }
+
 * {
   box-sizing: border-box; }
 
@@ -98,14 +132,14 @@ body {
   color: #fff;
   height: 100%;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-img {
     background: url(../img/main_background_1.jpg);
     background-attachment: fixed;
     background-size: cover; }
     body#bg-img:after {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       right: 0;
@@ -114,14 +148,28 @@ body {
       z-index: -1;
       background: rgba(43, 46, 51, 0.7); }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
   font-weight: 400; }
-  h1.lg-heading, h2.lg-heading, h3.lg-heading {
+  h1.lg-heading,
+  h2.lg-heading,
+  h3.lg-heading {
     font-size: 6rem; }
-  h1.sm-heading, h2.sm-heading, h3.sm-heading {
+    h1.lg-heading.slide-down,
+    h2.lg-heading.slide-down,
+    h3.lg-heading.slide-down {
+      margin-top: 10vh; }
+  h1.sm-heading,
+  h2.sm-heading,
+  h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem; }
+    h1.sm-heading.slide-down,
+    h2.sm-heading.slide-down,
+    h3.sm-heading.slide-down {
+      margin-top: 16vh; }
 
 a {
   color: #fff;
