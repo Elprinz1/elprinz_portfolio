@@ -133,6 +133,53 @@ main {
   }
 }
 
+//Projects page
+.projects-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.7rem; //or 20px
+
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+    border-radius: 5%;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+// Button styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: darken($primary-color, 10);
+  text-align: center;
+  border-radius: 20%;
+  &:hover {
+    background: $secondary-color;
+    color: #fff;
+  }
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($color: $primary-color, $amount: 40);
+  color: #333;
+ 
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($color: $primary-color, $amount: 40);
+
+  
+}
+
 #main-footer {
   text-align: center;
   background: darken($color: $primary-color, $amount: 5);
