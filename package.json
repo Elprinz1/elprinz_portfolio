@@ -11,7 +11,9 @@
   "author": "Elprinz",
   "license": "MIT",
   "dependencies": {
-    "gh-pages": "^2.2.0",
     "node-sass": "^4.14.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }
