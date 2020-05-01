@@ -101,6 +101,19 @@ body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
+  body#bg-img-home {
+    background: url(../img/main_background_1.jpg);
+    background-attachment: fixed;
+    background-size: cover; }
+    body#bg-img-home:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      background: rgba(43, 46, 51, 0.7); }
   body#bg-img {
     background: url(../img/main_background_1.jpg);
     background-attachment: fixed;
@@ -113,7 +126,7 @@ body {
       width: 100%;
       min-height: 100%;
       z-index: -1;
-      background: rgba(43, 46, 51, 0.7); }
+      background: rgba(43, 46, 51, 0.5); }
 
 h1,
 h2,
@@ -154,7 +167,36 @@ header {
 
 main {
   padding: 4rem;
-  min-height: calc(100vh-60px); }
+  min-height: calc(100vh - 60px); }
+  main .main-right,
+  main .main-left {
+    display: flex;
+    flex-flow: column wrap;
+    overflow: hidden;
+    width: 50%;
+    float: left;
+    padding: 1rem; }
+  main .main-right {
+    margin-top: 20vh;
+    padding: 1rem 7rem;
+    transition: ease-out 0.5s all; }
+    main .main-right .profilepic {
+      width: 150px;
+      height: 200px;
+      background: url("../img/portrait_1.jpg");
+      border: 0;
+      border-radius: 50%;
+      background-repeat: none;
+      background-position: center;
+      opacity: 0.08;
+      padding: inherit;
+      transition: ease-out 0.5s all; }
+      main .main-right .profilepic:hover {
+        opacity: 1;
+        width: 250px;
+        height: 300px;
+        border: 3px solid #419a1c;
+        transition: ease-out 0.5s all; }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -170,6 +212,10 @@ main {
       main#home h1:hover {
         color: #419a1c; }
   main#about {
+    overflow: hidden; }
+  main#projects {
+    overflow: hidden; }
+  main#contact {
     overflow: hidden; }
 
 .about-info {
@@ -259,6 +305,13 @@ main {
     grid-template-columns: repeat(4, 1fr); } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
+  main {
+    justify-content: center;
+    align-items: center;
+    text-align: center; }
+    main#home {
+      padding: 1rem;
+      width: 100%; }
   .projects-info {
     grid-template-columns: repeat(3, 1fr); } }
 
@@ -271,6 +324,28 @@ main {
       margin-bottom: 1rem; }
     main .sm-heading.slide-down {
       margin-top: 10vh; }
+    main#home {
+      display: grid;
+      grid-template-areas: "mainleft" "mainright";
+      grid-template-columns: 1fr;
+      padding: 2rem;
+      justify-content: center;
+      align-items: center; }
+      main#home .main-right,
+      main#home .main-left {
+        display: inline-block;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        float: none;
+        padding: 0.5rem -0.1rem;
+        margin-top: 5vh; }
+      main#home .main-right {
+        grid-area: mainright;
+        align-items: center; }
+      main#home .main-left {
+        grid-area: mainleft;
+        align-items: center; }
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -297,7 +372,20 @@ main {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
-  main#home h1 {
+  main#home h1, h2 {
     margin-top: 10vh; }
+    main#home h1.lg-heading, h2.lg-heading {
+      font-size: 4rem;
+      margin-bottom: 0;
+      padding: 0.1rem 0.5rem; }
+    main#home h1.sm-heading, h2.sm-heading {
+      font-size: 1.3rem;
+      margin-top: 1rem; }
+  main#projects h1 {
+    margin-top: 10vh; }
+    main#projects h1.lg-heading {
+      font-size: 5rem;
+      margin-bottom: 0;
+      padding: 0.1rem 0.5rem; }
   .projects-info {
     grid-template-columns: 1fr; } }

@@ -10,7 +10,7 @@ $background-opacity: 0.7;
 
 @mixin background {
   @if $show-home-image {
-    &#bg-img {
+    &#bg-img-home {
       background: $home-image;
       background-attachment: fixed;
       background-size: cover;
@@ -24,6 +24,22 @@ $background-opacity: 0.7;
         min-height: 100%;
         z-index: -1;
         background: rgba($primary-color, $background-opacity);
+      }
+    }
+    &#bg-img {
+      background: $home-image;
+      background-attachment: fixed;
+      background-size: cover;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        min-height: 100%;
+        z-index: -1;
+        background: rgba($primary-color, 0.5);
       }
     }
   }
