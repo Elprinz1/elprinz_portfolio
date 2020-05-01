@@ -312,6 +312,8 @@ main {
     main#home {
       padding: 1rem;
       width: 100%; }
+      main#home.lg-heading {
+        padding: inherit; }
   .projects-info {
     grid-template-columns: repeat(3, 1fr); } }
 
@@ -372,13 +374,16 @@ main {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
-  main#home h1, h2 {
+  main#home h1,
+  h2 {
     margin-top: 10vh; }
-    main#home h1.lg-heading, h2.lg-heading {
+    main#home h1.lg-heading,
+    h2.lg-heading {
       font-size: 4rem;
       margin-bottom: 0;
       padding: 0.1rem 0.5rem; }
-    main#home h1.sm-heading, h2.sm-heading {
+    main#home h1.sm-heading,
+    h2.sm-heading {
       font-size: 1.3rem;
       margin-top: 1rem; }
   main#projects h1 {
