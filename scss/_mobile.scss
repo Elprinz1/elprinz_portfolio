@@ -130,7 +130,23 @@
   main#projects h1 {
     margin-top: 10vh;
     &.lg-heading {
-      font-size: 5rem;
+      font-size: 4rem;
+      margin-bottom: 0;
+      padding: 0.1rem 0.5rem;
+    }
+  }
+  main#about h1 {
+    margin-top: 10vh;
+    &.lg-heading {
+      font-size: 4rem;
+      margin-bottom: 0;
+      padding: 0.1rem 0.5rem;
+    }
+  }
+  main#contact h1 {
+    margin-top: 10vh;
+    &.lg-heading {
+      font-size: 4rem;
       margin-bottom: 0;
       padding: 0.1rem 0.5rem;
     }
